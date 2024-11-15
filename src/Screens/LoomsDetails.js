@@ -307,10 +307,10 @@ const LoomDetails = ({ navigation }) => {
 
                 <TouchableOpacity
                  style={{padding:"3%"}}
-                    onPress={() => navigation.openDrawer()}
+                    onPress={() => navigation.goBack()}
                 >
                     <Image
-                        source={require("../Images/drawer1.png")}
+                        source={require("../Images/back.png")}
                         style={{ width: 28, height: 22, marginLeft: 10, }}
 
                     />

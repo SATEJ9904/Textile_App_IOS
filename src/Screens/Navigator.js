@@ -148,30 +148,6 @@ const LoomDrawerNavigator = () => (
       }} />
 
 
-
-
-    <LoomDrawer.Screen
-
-      name="LoomDetails"
-      component={LoomsDetails}
-      options={{
-        drawerActiveBackgroundColor: '#fff',
-        drawerActiveTintColor: '#000',
-        drawerInactiveTintColor: '#000',
-        drawerIcon: ({ focused }) => (
-          <Icon name={focused ? 'address-card' : 'address-card'} size={25} color={'grey'} />
-        ),
-        title: 'Looms Details',
-        drawerLabelStyle: {
-          marginLeft: 0,
-          fontFamily: 'Roboto-Medium',
-          fontSize: 18,
-
-        },
-
-      }} />
-
-
     <LoomDrawer.Screen
 
       name="JobWorkEnquires"
