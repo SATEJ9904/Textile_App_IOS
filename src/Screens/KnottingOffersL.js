@@ -28,7 +28,7 @@ const KnottingOffersL = () => {
                 <View style={styles.content}>
                     <View style={styles.cardContainer}>
                         <Card style={styles.card}>
-                            <Card.Cover source={{uri : "https://storage.googleapis.com/a1aa/image/LWEwgd2jqC7WLpIFzczeFOnf9aHl6CobvKtfxG9tUefZ8FuaC.jpg"}} />
+                            <Card.Cover source={require("../Images/knottingoffergen.jpg")} />
                             <Card.Content>
                                 <Title style={styles.cardTitle}>Generate Knotting Offer</Title>
                             </Card.Content>

@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Modal, Image, ScrollView, Dimensions } from 'react-native';
 import { TextInput, Button, IconButton, Snackbar, Card, Title } from 'react-native-paper';
 import DateTimePicker from '@react-native-community/datetimepicker';
-//import ImagePicker from 'react-native-image-crop-picker';
+import ImagePicker from 'react-native-image-crop-picker';
 import LottieView from 'lottie-react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/Ionicons';
+import HeaderPart from './HeaderPart';
 
 const { width, height } = Dimensions.get('window');
 
@@ -120,8 +121,9 @@ const GenerateKnottingoffers = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
+            <HeaderPart/>
             <View style={styles.header}>
-                <TouchableOpacity style={{padding:"2%", paddingTop:45}} onPress={() => navigation.goBack()}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Image source={require("../Images/back.png")} style={styles.drawerIcon} />
                 </TouchableOpacity>
                 <Text style={styles.headerText}>Generate Knotting Offers</Text>
@@ -140,6 +142,8 @@ const GenerateKnottingoffers = ({ navigation }) => {
                         />
                         <TextInput
                             label="Draft"
+                            placeholder='Eg : 1.2.4.5.7.1.3'
+                            placeholderTextColor={"#000"}
                             value={draft}
                             onChangeText={setDraft}
                             style={styles.input}
@@ -147,6 +151,8 @@ const GenerateKnottingoffers = ({ navigation }) => {
                         />
                         <TextInput
                             label="Reed Space"
+                            placeholder='(in inches)'
+                            placeholderTextColor={"#000"}
                             value={reedSpace}
                             onChangeText={setReedSpace}
                             style={styles.input}
@@ -308,7 +314,6 @@ const styles = StyleSheet.create({
         textShadowColor: 'rgba(0, 0, 0, 0.75)',
         textShadowOffset: { width: -1, height: 1 },
         textShadowRadius: 10,
-        paddingTop:55
     },
     scrollViewContent: {
         paddingHorizontal: '5%',

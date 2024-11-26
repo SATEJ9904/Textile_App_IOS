@@ -68,11 +68,11 @@
     <!-- Add other font files if needed -->
     </array>
 	<key>NSCameraUsageDescription</key>
-	<string>We need access to your camera for taking photos.</string>
+	<string>Turning on camera permission would help you while filling forms in app</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need access to your photo library to upload photos.</string>
+	<string>Turning on photo library permission would help you while sending or setting images</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We need access to save photos to your library.</string>
+	<string>Turning on Add to photo Library would help to store images to your photo library</string>
 
 </dict>
 </plist>

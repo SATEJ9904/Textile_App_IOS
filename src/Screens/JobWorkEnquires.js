@@ -215,17 +215,7 @@ const JobWorkEnquires = ({ navigation }) => {
     } else if (!counterOffer) {
       Alert.alert("Please Enter The Value Of Counter Offer")
     } else {
-      //const qs = require('qs');
-      let data = qs.stringify({
-        'EnquiryId': selectedEnquiry.EnquiryId,
-        'LoomTraderId': Id,
-        'DatePossibleFrom': fromDate,
-        'DatePossibleTo': toDate,
-        'JobRateExp': counterOffer,
-        'Status': false,
-        'LoomPossible': loomPossible,
-      });
-
+      //const qs = require('qs')
       let config = {
         method: 'post',
         maxBodyLength: Infinity,

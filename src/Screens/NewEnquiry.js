@@ -5,7 +5,7 @@ import { Checkbox } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios'
 import HeaderPart from './HeaderPart';
-//import ImagePicker from 'react-native-image-crop-picker';
+import ImagePicker from 'react-native-image-crop-picker';
 
 
 const { width } = Dimensions.get('window');
@@ -315,7 +315,7 @@ const NewEnquiry = ({ navigation }) => {
   const yesbutton = () => {
     setModalVisible2(false)
     setModalVisible(false)
-    navigation.navigate("PlanLooms")
+    navigation.goBack()
     setDesignPaper(null)
   }
 

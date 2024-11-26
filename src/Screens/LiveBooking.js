@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import HeaderPart from './HeaderPart';
 
 const LiveBooking = ({ navigation, route }) => {
   const [loading, setLoading] = useState(true);
@@ -316,6 +317,7 @@ const LiveBooking = ({ navigation, route }) => {
 
   return (
     <View style={styles.container}>
+      <HeaderPart />
       <View style={styles.headerContainer}>
         <TouchableOpacity style={{ padding: "1%" }} onPress={() => navigation.goBack()}>
           <ImageBackground

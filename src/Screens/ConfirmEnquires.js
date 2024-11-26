@@ -29,7 +29,6 @@ const ConfirmEnquires = ({ navigation }) => {
   const [gstno, setGSTNO] = useState("")
   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
 
-
   const getData = async () => {
     const Email = await AsyncStorage.getItem("AppUserId");
     const Name = await AsyncStorage.getItem("Name");
@@ -73,23 +72,27 @@ const ConfirmEnquires = ({ navigation }) => {
     fetchData();
   }, []);
 
+  const [FQ,setFQ]=useState(null)
+
   const fetchEnquiryDetails = async (EnquiryId) => {
     try {
       const response = await axios.get('https://textileapp.microtechsolutions.co.in/php/getjoin2.php?EnquiryId=' + EnquiryId);
       setEnquiryDetails(response.data);
+      setFQ(response.data[0].FabricQuality)
+
     } catch (error) {
       console.error('Error fetching enquiry details: ', error);
     }
   };
 
   const [enquiryDetailsmodal, setEnquiryDetailsModal] = useState([])
-  const [FQ,setFQ]=useState(null)
 
   const fetchEnquiryDetails1 = async (EnquiryId) => {
+    console.log(EnquiryId)
     try {
       const response = await axios.get('https://textileapp.microtechsolutions.co.in/php/getjoin.php?EnquiryId=' + EnquiryId);
       setEnquiryDetailsModal(response.data);
-      setFQ(response.data[0].FabricQuality)
+      console.log(response.data[0].FabricQuality)
     } catch (error) {
       console.error('Error fetching enquiry details: ', error);
     }
@@ -97,8 +100,9 @@ const ConfirmEnquires = ({ navigation }) => {
   };
 
   const confirmEnquiry = () => {
-    setShowModal(false);
+   
     setShowConfirmModal(true);
+   // setShowModal(false);
   };
 
   const postLoomOrder = async () => {
@@ -157,7 +161,8 @@ const ConfirmEnquires = ({ navigation }) => {
   const yesbutton2 = () => {
     UpdateEnquiryConfirm();
     setShowConfirmModal(false);
-    navigation.navigate("PlanLooms");
+    setShowModal(false)
+    navigation.goBack();
   }
   const [quality, setQuality] = useState("")
 
@@ -223,13 +228,13 @@ const ConfirmEnquires = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <HeaderPart />
       {loading ? (
         <Text>Loading...</Text>
       ) : (
         <>
           {showE ? (
             <View style={{ width: "100%" }}>
+              <HeaderPart />
               <View style={{ flexDirection: "row", backgroundColor: "#003C43", width: "100%", marginBottom: "5%" }}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                   <ImageBackground
@@ -238,7 +243,7 @@ const ConfirmEnquires = ({ navigation }) => {
                     imageStyle={{ borderRadius: 0 }}
                   />
                 </TouchableOpacity>
-                <Text style={styles.detailsTitle}>Enquiry List </Text>
+                <Text style={{color:"#fff",fontWeight:"600",fontSize:23,alignSelf:"center",marginLeft:"27%"}}>Enquiry List </Text>
 
               </View>
               <ScrollView>
@@ -263,11 +268,12 @@ const ConfirmEnquires = ({ navigation }) => {
                       </TouchableOpacity>
 
                     </View> :
-                    <View style={{ flexDirection: "row", backgroundColor: "#003C43", width: "120%", marginLeft: "-8%", marginTop: "-5%" }}>
+                    <View style={{ flexDirection: "row", backgroundColor: "#003C43", width: "100%", marginLeft: "0%", marginTop: "0%",height:"47%" }}>
+                       <HeaderPart />
                       <TouchableOpacity onPress={() => { setShowE(true); setShowEC(false); }}>
                         <ImageBackground
                           source={require("../Images/back.png")}
-                          style={{ width: 34, height: 30, alignSelf: 'flex-start', backgroundColor: "#003C43", marginTop: 15, marginRight: 0, marginLeft: 20 }}
+                          style={{ width: 34, height: 30, alignSelf: 'flex-start', backgroundColor: "#003C43", marginTop: "100%", marginRight: 0, marginLeft: 20 }}
                           imageStyle={{ borderRadius: 0 }}
                         />
                       </TouchableOpacity>
@@ -285,8 +291,8 @@ const ConfirmEnquires = ({ navigation }) => {
                 }
               </View>
               <ScrollView>
-                <View>
-                <Text style={{color:"#000",fontSize:20,marginTop:"5%",fontWeight:"600"}}>Fabric Quality : <Text style={{fontWeight:"400"}}>{FQ}</Text></Text>
+                <View style={{}}>
+                <Text style={{color:"#000",fontSize:20,marginTop:"0%",fontWeight:"600",height:"40%"}}>Fabric Quality : <Text style={{fontWeight:"400"}}>{FQ}</Text></Text>
                 </View>
                 <View style={styles.detailsHeaderContainer}>
                   <ScrollView horizontal>
@@ -468,7 +474,6 @@ const styles = StyleSheet.create({
     marginBottom: height * 0.01,
     alignItems: 'center',
     height: height * 0.06,
-    marginTop: "5%"
   },
   detailsHeaderText: {
     flex: 1,
@@ -544,19 +549,18 @@ const styles = StyleSheet.create({
   detailContainer: {
     flexDirection: "row",
     justifyContent: "flex-start",
-    marginBottom: 10,
     width: "100%"
   },
   detailsTitle: {
     fontSize: width * 0.05,
     fontWeight: 'bold',
-    paddingTop: height * -0.01,
-    marginTop: height * 0.012,
-    marginBottom: height * 0.01,
+    paddingTop: height * 0.01,
+    marginTop: height * 0.05,
     color: '#fff',
-    marginLeft: "25%",
-    height: height * 0.035,
-    width: width * 1
+    marginLeft: "20%",
+    height: height * 0.05,
+    width: width * 1,
+    marginBottom:"10%"
   },
   rowColor1: {
     backgroundColor: '#f9f9f9',

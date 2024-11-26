@@ -215,28 +215,6 @@ const LoomDrawerNavigator = () => (
 
     <LoomDrawer.Screen
 
-      name="Market Offers"
-      component={Market}
-      options={{
-        drawerActiveBackgroundColor: '#fff',
-        drawerActiveTintColor: '#000',
-        drawerInactiveTintColor: '#000',
-        drawerIcon: ({ focused }) => (
-          <Icon name={focused ? 'rupee' : 'rupee'} size={25} color={'grey'} />
-        ),
-        title: 'Market Offers',
-        drawerLabelStyle: {
-          marginLeft: 10,
-          fontFamily: 'Roboto-Medium',
-          fontSize: 18,
-
-        },
-
-      }} />
-
-
-    <LoomDrawer.Screen
-
       name="CalculationsTrader"
       component={CalculationsTrader}
       options={{
@@ -295,27 +273,6 @@ const LoomDrawerNavigator = () => (
         title: 'Canceled Orders',
         drawerLabelStyle: {
           marginLeft: 0,
-          fontFamily: 'Roboto-Medium',
-          fontSize: 18,
-
-        },
-
-      }} />
-
-    <LoomDrawer.Screen
-
-      name="GetYarnRates"
-      component={GetYarnRates}
-      options={{
-        drawerActiveBackgroundColor: '#fff',
-        drawerActiveTintColor: '#000',
-        drawerInactiveTintColor: '#000',
-        drawerIcon: ({ focused }) => (
-          <Icon name={focused ? 'rupee' : 'rupee'} size={25} color={'grey'} />
-        ),
-        title: 'Get Yarn Rates',
-        drawerLabelStyle: {
-          marginLeft: 10,
           fontFamily: 'Roboto-Medium',
           fontSize: 18,
 
@@ -473,28 +430,6 @@ const TraderDrawerNavigator = () => (
 
       }} />
 
-
-    <TraderDrawer.Screen
-
-      name="Market"
-      component={Market}
-      options={{
-        drawerActiveBackgroundColor: '#fff',
-        drawerActiveTintColor: '#000',
-        drawerInactiveTintColor: '#000',
-        drawerIcon: ({ focused }) => (
-          <Icon name={focused ? 'rupee' : 'rupee'} size={25} color={'grey'} />
-        ),
-        title: 'Market',
-        drawerLabelStyle: {
-          marginLeft: 10,
-          fontFamily: 'Roboto-Medium',
-          fontSize: 15,
-
-        },
-
-      }} />
-
     <TraderDrawer.Screen
 
       name="CalculationsTrader"
@@ -509,27 +444,6 @@ const TraderDrawerNavigator = () => (
         title: 'Calculations',
         drawerLabelStyle: {
           marginLeft: 5,
-          fontFamily: 'Roboto-Medium',
-          fontSize: 15,
-
-        },
-
-      }} />
-
-    <TraderDrawer.Screen
-
-      name="IncompleteOrders"
-      component={IncompleteOrders}
-      options={{
-        drawerActiveBackgroundColor: '#fff',
-        drawerActiveTintColor: '#000',
-        drawerInactiveTintColor: '#000',
-        drawerIcon: ({ focused }) => (
-          <Icon name={focused ? 'exclamation-circle' : 'exclamation-circle'} size={25} color={'grey'} />
-        ),
-        title: 'Incomplete Orders',
-        drawerLabelStyle: {
-          marginLeft: 10,
           fontFamily: 'Roboto-Medium',
           fontSize: 15,
 

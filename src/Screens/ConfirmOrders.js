@@ -2,7 +2,7 @@ import { SafeAreaView, StyleSheet, Text, View, Modal, Pressable, StatusBar, Flat
 import React, { useEffect, useState } from 'react'
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { Checkbox } from 'react-native-paper';
-//import ImageCropPicker from 'react-native-image-crop-picker';
+import ImageCropPicker from 'react-native-image-crop-picker';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Animatable from 'react-native-animatable';
@@ -1376,7 +1376,7 @@ const ConfirmOrders = ({ navigation }) => {
 
                                 <View style={{ flexDirection: "row", width: width * 0.9 }}>
                                   <TextInput
-                                    style={{ width: width * 0.9, borderRadius: 15, color: "#000" }}
+                                    style={{ width: width * 0.9, borderRadius: 15, color: "#000",padding:"3%" }}
                                     placeholder='Any Comments....'
                                     placeholderTextColor={"#000"}
                                     value={first_piece_approval}

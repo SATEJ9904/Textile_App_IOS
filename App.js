@@ -221,27 +221,6 @@ const LoomDrawerNavigator = () => (
 
     <LoomDrawer.Screen
 
-      name="Market Offers"
-      component={Market}
-      options={{
-        drawerActiveBackgroundColor: '#fff',
-        drawerActiveTintColor: '#000',
-        drawerInactiveTintColor: '#000',
-        drawerIcon: ({ focused }) => (
-          <Icon name={focused ? 'rupee' : 'rupee'} size={25} color={'grey'} />
-        ),
-        title: 'Market Offers',
-        drawerLabelStyle: {
-          marginLeft: 10,
-          fontFamily: 'Roboto-Medium',
-          fontSize: 18,
-
-        },
-
-      }} />
-
-    <LoomDrawer.Screen
-
       name="CalculationsTrader"
       component={CalculationsTrader}
       options={{
@@ -448,27 +427,6 @@ const TraderDrawerNavigator = () => (
           <Icons name={focused ? 'local-offer' : 'local-offer'} size={25} color={'grey'} />
         ),
         title: 'Knotting Offers',
-        drawerLabelStyle: {
-          marginLeft: 10,
-          fontFamily: 'Roboto-Medium',
-          fontSize: 15,
-
-        },
-
-      }} />
-
-    <TraderDrawer.Screen
-
-      name="Market"
-      component={Market}
-      options={{
-        drawerActiveBackgroundColor: '#fff',
-        drawerActiveTintColor: '#000',
-        drawerInactiveTintColor: '#000',
-        drawerIcon: ({ focused }) => (
-          <Icon name={focused ? 'rupee' : 'rupee'} size={25} color={'grey'} />
-        ),
-        title: 'Market',
         drawerLabelStyle: {
           marginLeft: 10,
           fontFamily: 'Roboto-Medium',
@@ -999,7 +957,7 @@ const App = () => {
   }, []);
 
 
-  const DrawerNavigator = loomOrtrader == 'L' ? LoomDrawerNavigator : loomOrtrader == 'T' ? TraderDrawerNavigator : loomOrtrader == 'A' ? AdminDrawerNavigator : loomOrtrader == 'Y' ? YarnDrawerNavigator : DefaultDrawerNavigator;
+  const DrawerNavigator = loomOrtrader == 'L' ? LoomDrawerNavigator : loomOrtrader == 'T' ? TraderDrawerNavigator: DefaultDrawerNavigator ; {/* : loomOrtrader == 'A' ? AdminDrawerNavigator : loomOrtrader == 'Y' ? YarnDrawerNavigator*/} ;
 
   return (
     <NavigationContainer>
